@@ -1,5 +1,5 @@
 //Crea un file di faust in cui esponi, in forma di commento, i principi della sintesi sottrattiva. Realizza un esempio attraverso un filtraggio passa banda.
 // Per sintesi sottrattiva ci si riferisce ad un modello di sintesi sonora nella quale una sorgente sonora (oscillatori o parziali) ricca di armoniche, viene filtrata da un punto di vista spettrale "sottraendo" o modulando da essa bande di frequenze o singole parziali. Gli aspetti più interessanti vengono evidenziati attraverso il processo dinamico successivo, ovvero quando questa operazione di filtraggio si sviluppa durante l'evoluzione temporale del segnale: questo processo temporale è demandato a particolari amplificatori, i generatori di inviluppo, che possono modificare sia il volume del suono che la sua banda di frequenza. references : wikipedia
 import("stdfaust.lib") ;
-fcut=vslider("cut-off  [style.knob][scale:exp]" , 1000,20000,20,1) ;
+fcut=vslider("cut-off  [style.knob][scale:exp]" , 1000,20,20000,1) ;
 process = fi.lowpass(2,fcut) : fi.highpass(2,fcut) ;
